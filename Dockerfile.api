@@ -1,0 +1,17 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Build context is the PARENT directory of researcher_agent/, e.g.:
+#   docker build -f researcher_agent/Dockerfile.api -t research-api .
+
+COPY researcher_agent/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY researcher_agent /app/researcher_agent
+
+ENV PYTHONPATH=/app
+
+EXPOSE 8000
+
+CMD ["uvicorn", "researcher_agent.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,29 @@
+"""
+Writer agent: drafts a professional report from the analysis.
+"""
+from researcher_agent.llm_client import llm
+from researcher_agent.graph.state import AgentState
+
+
+def writer_agent(state: AgentState) -> dict:
+    query = state["query"]
+    analysis = state["analysis"]
+
+    prompt = f"""
+    Create a professional report.
+
+    Topic:
+    {query}
+
+    Analysis:
+    {analysis}
+
+    Include:
+    - Executive Summary
+    - Key Findings
+    - Recommendations
+    - Conclusion
+    """
+
+    response = llm.invoke(prompt)
+    return {"report": response.content}
