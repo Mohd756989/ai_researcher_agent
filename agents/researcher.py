@@ -2,8 +2,8 @@
 Researcher agent: runs the planned search queries via Tavily and
 collects the raw results.
 """
-from researcher_agent.tools.search import search_web
-from researcher_agent.graph.state import AgentState
+from tools.search import search_web
+from graph.state import AgentState
 
 
 def researcher_agent(state: AgentState) -> dict:

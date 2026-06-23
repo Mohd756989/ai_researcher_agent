@@ -5,9 +5,9 @@ updated with progress so the API can report status while it's running.
 import logging
 import uuid
 
-from researcher_agent.graph.workflow import build_graph
-from researcher_agent.api.job_store import job_store
-from researcher_agent.api.schemas import JobStatus
+from graph.workflow import build_graph
+from api.job_store import job_store
+from api.schemas import JobStatus
 
 logger = logging.getLogger("researcher_agent.runner")
 

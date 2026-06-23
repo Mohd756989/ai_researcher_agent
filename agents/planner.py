@@ -2,8 +2,8 @@
 Planner agent: turns the user's research query into a set of concrete
 web search queries.
 """
-from researcher_agent.llm_client import llm
-from researcher_agent.graph.state import AgentState
+from llm_client import llm
+from graph.state import AgentState
 
 
 def planner_agent(state: AgentState) -> dict:

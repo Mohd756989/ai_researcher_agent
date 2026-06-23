@@ -2,8 +2,8 @@
 Analyzer agent: synthesizes raw search results into key findings,
 trends, opportunities, and risks.
 """
-from researcher_agent.llm_client import llm
-from researcher_agent.graph.state import AgentState
+from llm_client import llm
+from graph.state import AgentState
 
 def _format_docs(docs: list[dict]) -> str:
     parts = []

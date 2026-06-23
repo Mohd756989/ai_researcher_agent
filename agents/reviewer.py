@@ -2,8 +2,8 @@
 Reviewer agent: critiques the drafted report and decides whether it's
 approved or needs another pass.
 """
-from researcher_agent.llm_client import llm
-from researcher_agent.graph.state import AgentState
+from llm_client import llm
+from graph.state import AgentState
 
 
 def reviewer_agent(state: AgentState) -> dict:

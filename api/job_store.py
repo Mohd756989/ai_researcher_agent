@@ -9,7 +9,7 @@ import threading
 from datetime import datetime
 from typing import Dict, Optional
 
-from researcher_agent.api.schemas import JobStatus
+from api.schemas import JobStatus
 
 
 class Job:

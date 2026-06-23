@@ -14,7 +14,7 @@ from fastapi import FastAPI, HTTPException, BackgroundTasks, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from researcher_agent.api.schemas import (
+from api.schemas import (
     ResearchRequest,
     ResearchJobResponse,
     JobStatusResponse,

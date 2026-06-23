@@ -1,8 +1,8 @@
 """
 Writer agent: drafts a professional report from the analysis.
 """
-from researcher_agent.llm_client import llm
-from researcher_agent.graph.state import AgentState
+from llm_client import llm
+from graph.state import AgentState
 
 
 def writer_agent(state: AgentState) -> dict:

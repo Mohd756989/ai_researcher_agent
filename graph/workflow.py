@@ -10,12 +10,12 @@ Builds and compiles the multi-agent research LangGraph workflow:
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.memory import MemorySaver
 
-from researcher_agent.graph.state import AgentState
-from researcher_agent.agents.planner import planner_agent
-from researcher_agent.agents.researcher import researcher_agent
-from researcher_agent.agents.analyzer import analyzer_agent
-from researcher_agent.agents.writer import writer_agent
-from researcher_agent.agents.reviewer import reviewer_agent, review_decision
+from graph.state import AgentState
+from agents.planner import planner_agent
+from agents.researcher import researcher_agent
+from agents.analyzer import analyzer_agent
+from agents.writer import writer_agent
+from agents.reviewer import reviewer_agent, review_decision
 
 
 def build_graph():

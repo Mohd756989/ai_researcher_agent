@@ -2,7 +2,7 @@
 Shared LLM client used by all agents.
 """
 from langchain_groq import ChatGroq
-from researcher_agent.config import GROQ_API_KEY, LLM_MODEL
+from config import GROQ_API_KEY, LLM_MODEL
 
 llm = ChatGroq(
     model=LLM_MODEL,

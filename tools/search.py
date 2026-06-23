@@ -6,7 +6,7 @@ dict returned by `client.search(...)`, which doesn't exist. Fixed here to
 just read the `results` key from the response dict.
 """
 from tavily import TavilyClient
-from researcher_agent.config import TAVILY_API_KEY
+from config import TAVILY_API_KEY
 
 client = TavilyClient(api_key=TAVILY_API_KEY)
 
