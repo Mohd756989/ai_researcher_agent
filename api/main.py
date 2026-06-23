@@ -20,8 +20,8 @@ from api.schemas import (
     JobStatusResponse,
     JobStatus,
 )
-from researcher_agent.api.job_store import job_store
-from researcher_agent.api.runner import run_research_job
+from api.job_store import job_store
+from api.runner import run_research_job
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("researcher_agent.api")
