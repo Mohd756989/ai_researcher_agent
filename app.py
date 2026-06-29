@@ -29,7 +29,7 @@ from api_client import ResearchAPIClient
 
 st.set_page_config(page_title="AI Research Agent", page_icon="🔎", layout="wide")
 
-API_BASE_URL = os.getenv("RESEARCH_API_URL", "http://localhost:8000")
+API_BASE_URL = os.getenv("RESEARCH_API_URL", "airesearcheragent-production.up.railway.app")
 NODE_LABELS = {
     "planner": "🧭 Planning search queries",
     "researcher": "🌐 Researching the web",

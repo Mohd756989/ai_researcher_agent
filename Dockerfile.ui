@@ -8,7 +8,7 @@ WORKDIR /app
 COPY researcher_agent/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY researcher_agent /app
+COPY . /app
 
 ENV PYTHONPATH=/app
 

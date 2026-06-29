@@ -27,7 +27,7 @@ from api.runner import run_research_job
 
 logging.basicConfig(level=logging.INFO)
 
-logger = logging.getLogger("researcher_agent.api")
+logger = logging.getLogger("api")
 
 app = FastAPI(
     title="AI Research Agent API",

@@ -12,3 +12,4 @@ build/
 .venv/
 venv/
 *api/__pycache__/job_store.cpython-310.pyc
+api/__pycache__/main.cpython-310.pyc
