@@ -2,16 +2,16 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Build context is the PARENT directory of researcher_agent/, e.g.:
-#   docker build -f researcher_agent/Dockerfile.api -t research-api .
+# Copy requirements from current directory
+COPY requirements.txt .
 
-COPY researcher_agent/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY researcher_agent /app
+# Copy all files from current directory
+COPY . /app
 
 ENV PYTHONPATH=/app
 
 EXPOSE 8000
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
