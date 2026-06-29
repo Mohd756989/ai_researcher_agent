@@ -5,7 +5,7 @@ WORKDIR /app
 # Build context is the PARENT directory of researcher_agent/, e.g.:
 #   docker build -f researcher_agent/Dockerfile.ui -t research-ui .
 
-COPY researcher_agent/requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app

@@ -10,6 +10,3 @@ llm = ChatGroq(
     api_key=GROQ_API_KEY,
 )
 
-class Solution:
-    def get_info():
-        return "hello world"
