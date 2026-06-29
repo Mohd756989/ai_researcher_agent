@@ -25,7 +25,7 @@ if _PARENT_DIR not in sys.path:
 
 import streamlit as st
 
-from researcher_agent.api_client import ResearchAPIClient
+from api_client import ResearchAPIClient
 
 st.set_page_config(page_title="AI Research Agent", page_icon="🔎", layout="wide")
 

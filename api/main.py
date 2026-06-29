@@ -14,6 +14,8 @@ from fastapi import FastAPI, HTTPException, BackgroundTasks, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
+
+    
 from api.schemas import (
     ResearchRequest,
     ResearchJobResponse,
@@ -24,6 +26,7 @@ from api.job_store import job_store
 from api.runner import run_research_job
 
 logging.basicConfig(level=logging.INFO)
+
 logger = logging.getLogger("researcher_agent.api")
 
 app = FastAPI(

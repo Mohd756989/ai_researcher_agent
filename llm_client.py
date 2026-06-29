@@ -9,3 +9,7 @@ llm = ChatGroq(
     temperature=0,
     api_key=GROQ_API_KEY,
 )
+
+class Solution:
+    def get_info():
+        return "hello world"
