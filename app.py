@@ -91,7 +91,7 @@ if run_clicked and query.strip():
                 st.error(f"Pipeline error: {status.get('error')}")
         else:
             # Local in-process fallback (no API running)
-            from researcher_agent.graph.workflow import build_graph
+            from graph.workflow import build_graph
 
             if "local_graph" not in st.session_state:
                 st.session_state.local_graph = build_graph()
