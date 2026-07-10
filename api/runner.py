@@ -23,6 +23,9 @@ NODE_LABELS = {
 
 
 def run_research_job(job_id: str, query: str):
+    if job_store.get(job_id) is None:
+        job_store.create(job_id, query)
+
     job_store.update(job_id, status=JobStatus.RUNNING, current_step="Starting")
     config = {"configurable": {"thread_id": str(uuid.uuid4())}}
     final_state: dict = {}

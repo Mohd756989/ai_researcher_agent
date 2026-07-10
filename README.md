@@ -124,6 +124,21 @@ docker compose up --build
 ```
 This builds and runs both the API (port 8000) and UI (port 8501), wired together automatically.
 
+### Evaluate the agent
+
+A lightweight evaluation harness is included under `evals/`.
+
+```bash
+python -m evals.runner --json
+```
+
+You can also run a single case:
+```bash
+python -m evals.runner --case cloud-trends
+```
+
+The evaluator scores each run on topic coverage, report length, required sections, and whether the workflow returned search results.
+
 ## Notes on fixes from the original notebook
 
 - Removed hardcoded API keys — now loaded from `.env` / environment variables only.

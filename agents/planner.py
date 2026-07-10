@@ -4,8 +4,9 @@ web search queries.
 """
 from llm_client import llm
 from graph.state import AgentState
+from langsmith import traceable
 
-
+@traceable(name="planner_agent")
 def planner_agent(state: AgentState) -> dict:
     query = state["query"]
 

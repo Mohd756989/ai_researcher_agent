@@ -4,8 +4,9 @@ collects the raw results.
 """
 from tools.search import search_web
 from graph.state import AgentState
+from langsmith import traceable
 
-
+@traceable(name="researcher_agent")
 def researcher_agent(state: AgentState) -> dict:
     queries = state["search_queries"]
     all_docs = []

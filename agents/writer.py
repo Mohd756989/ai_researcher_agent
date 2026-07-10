@@ -3,8 +3,9 @@ Writer agent: drafts a professional report from the analysis.
 """
 from llm_client import llm
 from graph.state import AgentState
+from langsmith import traceable
 
-
+@traceable(name="writer_agent")
 def writer_agent(state: AgentState) -> dict:
     query = state["query"]
     analysis = state["analysis"]

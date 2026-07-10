@@ -4,6 +4,7 @@ trends, opportunities, and risks.
 """
 from llm_client import llm
 from graph.state import AgentState
+from langsmith import traceable
 
 def _format_docs(docs: list[dict]) -> str:
     parts = []
@@ -17,7 +18,7 @@ def _format_docs(docs: list[dict]) -> str:
             parts.append(str(d))
     return "\n\n".join(parts)
 
-
+@traceable(name="analyzer_agent")
 def analyzer_agent(state: AgentState) -> dict:
     docs = state["search_results"]
     context = _format_docs(docs)

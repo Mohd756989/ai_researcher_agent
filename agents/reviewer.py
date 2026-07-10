@@ -4,8 +4,9 @@ approved or needs another pass.
 """
 from llm_client import llm
 from graph.state import AgentState
+from langsmith import traceable
 
-
+@traceable(name="reviewer_agent")
 def reviewer_agent(state: AgentState) -> dict:
     report = state["report"]
     revision_count = state.get("revision_count", 0) + 1
