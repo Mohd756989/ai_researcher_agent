@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: researcher-api
+  labels:
+    app: researcher-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: researcher-api
+  template:
+    metadata:
+      labels:
+        app: researcher-api
+    spec:
+      containers:
+        - name: api
+          image: your-registry/researcher-agent-api:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          env:
+            - name: GROQ_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: researcher-secrets
+                  key: GROQ_API_KEY
+            - name: TAVILY_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: researcher-secrets
+                  key: TAVILY_API_KEY
+            - name: LLM_MODEL
+              value: llama-3.3-70b-versatile
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 20
+            periodSeconds: 20
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: researcher-ui
+  labels:
+    app: researcher-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: researcher-ui
+  template:
+    metadata:
+      labels:
+        app: researcher-ui
+    spec:
+      containers:
+        - name: ui
+          image: your-registry/researcher-agent-ui:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8501
+          env:
+            - name: RESEARCH_API_URL
+              value: http://researcher-api:8000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8501
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8501
+            initialDelaySeconds: 25
+            periodSeconds: 20

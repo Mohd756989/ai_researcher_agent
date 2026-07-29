@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: researcher-api
+  labels:
+    app: researcher-api
+spec:
+  type: ClusterIP
+  selector:
+    app: researcher-api
+  ports:
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
+      name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: researcher-ui
+  labels:
+    app: researcher-ui
+spec:
+  type: ClusterIP
+  selector:
+    app: researcher-ui
+  ports:
+    - port: 8501
+      targetPort: 8501
+      protocol: TCP
+      name: http
