@@ -137,7 +137,7 @@ You can also run a single case:
 python -m evals.runner --case cloud-trends
 ```
 
-The evaluator scores each run on topic coverage, report length, required sections, and whether the workflow returned search results.
+make sure the app completes the evals testing before going to production
 
 ## Notes on fixes from the original notebook
 
