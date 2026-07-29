@@ -11,6 +11,7 @@ Run the API:
 Run the UI:
     streamlit run researcher_agent/app.py
 """
+import streamlit as st
 import os
 import sys
 import uuid
